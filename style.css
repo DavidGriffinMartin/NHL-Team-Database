@@ -1,3 +1,48 @@
 body {
-    background-color: lightgray;
+    background-color: black;
+    /* margin: 0 auto; */
+}
+
+.container {
+    background-color: tan;
+    height: 675px;
+    max-width: 80%;
+    min-width: 600px;
+    margin: auto;
+    position: relative;
+    /* background-image: url("https://freight.cargo.site/t/original/i/8205dd31e3c4695c16dcef9540b39c8d4d78a040572264c88aac56e506e9d559/04-04-18-12-06-48.png"); */
+}
+
+img {
+    position: absolute;
+    /* top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+h1 {
+    color: red;
+    border: 5px red solid;
+    text-align: center;
+    width: 70%;
+    padding: 20px;
+    margin: auto;
+    /* margin: 50px 100px 10px 100px; */
+    background-color: black;
+}
+
+#team {
+    border: 5px red solid;
+    color: red;
+    font-size: 25px;
+    /* width: 1000px;
+    height: 500px; */
+    padding: 30px;
+    margin: 50px;
+    /* margin: 20px; */
+    height: 300px;
+    position: absolute;
+    background-color: black;
 }

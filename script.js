@@ -7,7 +7,7 @@ const URL = 'https://statsapi.web.nhl.com/api/v1/teams'
 $.ajax(URL).then(function(data) {
     // Check work
     console.log('League info is ready!');
-    console.log(data.teams[13]);
+    console.log(data);
     // 
     const $wshName = data.teams[13].name;
     const $wshAbv = data.teams[13].abbreviation;
