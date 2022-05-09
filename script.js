@@ -5,15 +5,16 @@ console.log(hello)
 // NHL API
 const URL = 'https://statsapi.web.nhl.com/api/v1/teams'
 $.ajax(URL).then(function(data) {
-    // Check work
+    // LOG API CONNECTION
     console.log('League info is ready!');
     console.log(data);
-    // 
+    // DECLARE VARIABLES
     const $wshName = data.teams[13].name;
     const $wshAbv = data.teams[13].abbreviation;
     const $wshConf = data.teams[13].conference.name;
     const $wshDiv = data.teams[13].division.name;
     const $wshVenue = data.teams[13].venue.name;
+    // APPEND LIST ITEMS
     $('#team').append(`<li>Team name: ${$wshName}</li>`)
     $('#team').append(`<li>Abbreviation: ${$wshAbv}</li>`)
     $('#team').append(`<li>Conference: ${$wshConf}</li>`)
