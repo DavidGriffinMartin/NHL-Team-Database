@@ -14,12 +14,14 @@ $.ajax(URL).then(function(data) {
     const $wshConf = data.teams[13].conference.name;
     const $wshDiv = data.teams[13].division.name;
     const $wshVenue = data.teams[13].venue.name;
+    const $wshEstb = data.teams[13].firstYearOfPlay
     // APPEND LIST ITEMS
-    $('#team').append(`<li>Team name: ${$wshName}</li>`)
-    $('#team').append(`<li>Abbreviation: ${$wshAbv}</li>`)
-    $('#team').append(`<li>Conference: ${$wshConf}</li>`)
-    $('#team').append(`<li>Division: ${$wshDiv}</li>`)
-    $('#team').append(`<li>Venue: ${$wshVenue}</li>`)
+    $('#info').append(`<li>Team name: ${$wshName}</li>`)
+    $('#info').append(`<li>Abbreviation: ${$wshAbv}</li>`)
+    $('#info').append(`<li>Conference: ${$wshConf}</li>`)
+    $('#info').append(`<li>Division: ${$wshDiv}</li>`)
+    $('#info').append(`<li>Venue: ${$wshVenue}</li>`)
+    $('#info').append(`<li>Established: ${$wshEstb}</li>`)
     // console.log(data.teams);
 });
 
