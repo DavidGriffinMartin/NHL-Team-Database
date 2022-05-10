@@ -28,6 +28,11 @@ header {
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+button {
+    color: rgba(255, 255, 255, 0.9);
+    background-color: black;
+}
+
 #info {
     color: black;
     border: 5px rgb(100, 100, 100) solid;

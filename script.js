@@ -3,13 +3,9 @@ console.log(hello)
 
 // NHL API
 const URL = 'https://statsapi.web.nhl.com/api/v1/teams';
+// GET TEAM BUTTON AND FUNCTION
 const $getTeamBtn = $('#getTeamBtn');
 // const getTeam = () => {
-// 	const randomIndex = Math.floor(Math.random() * 32)
-// 	console.log(randomIndex)
-// 	const team = [randomIndex]
-// 	console.log(team)
-// }
 $.ajax(URL).then(function(data) {
     // CHECK API CONNECTION
     console.log('League info is ready!');
