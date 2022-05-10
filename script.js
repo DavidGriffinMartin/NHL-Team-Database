@@ -1,11 +1,14 @@
 hello = 'Good morning, Dave.'
 console.log(hello)
 
-// NHL API
+// NHL API (TEAMS)
 const URL = 'https://statsapi.web.nhl.com/api/v1/teams';
-// GET TEAM BUTTON AND FUNCTION
+// CACHE ELEMENTS
 const $getTeamBtn = $('#getTeamBtn');
-// const getTeam = () => {
+const $infoContent = $('#info')
+// GET TEAM FUNCTION
+const getTeam = () => {
+    $infoContent.empty();
 $.ajax(URL).then(function(data) {
     // CHECK API CONNECTION
     console.log('League info is ready!');
@@ -29,4 +32,6 @@ $.ajax(URL).then(function(data) {
     $('#info').append(`<li>Venue: ${$teamVenue}</li>`);
     $('#info').append(`<li>Established: ${$teamEstb}</li>`);
     $('#info').append(`<li><a href="${$teamSite}">Official Team Site</a></li>`);
-});
+})};
+// EVENT LISTINERS
+$getTeamBtn.on('click', getTeam)
