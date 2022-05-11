@@ -13,6 +13,8 @@ const $namesContent = $('#names');
 
 // GET TEAM FUNCTION
 const getRandomTeam = () => {
+
+    // EMPTY CONTENT
     $infoContent.empty();
     $statsContent.empty();
     $namesContent.empty();
@@ -22,13 +24,13 @@ const getRandomTeam = () => {
         console.log('League info is ready!');
 
         // DECLARE RANDOM INDEX
-        const $randomIndex = Math.floor(Math.random() * 31);
+        const $randomIndex = Math.floor(Math.random() * 32);
         console.log('Selected Team: ' + $randomIndex);
 
         // LOG TEAM DATA
         console.log(teamData);
 
-        // CACHE TEAM VARIABLE SHORT CUT
+        // CACHE TEAM DATA SHORT CUT
         const $teamDataShort = teamData.teams[$randomIndex]
 
         // CACHE TEAM VARIABLES
@@ -39,7 +41,6 @@ const getRandomTeam = () => {
         const $teamVenue = $teamDataShort.venue.name;
         const $teamEstb = $teamDataShort.firstYearOfPlay;
         const $teamSite = $teamDataShort.officialSiteUrl;
-        // const $teamRoster = teamData.teams[$randomIndex].roster.roster;
 
         // APPEND INFO HEADER
         $('#info').append(`<h3>Team Information</h3>`);
@@ -57,7 +58,7 @@ const getRandomTeam = () => {
         $.ajax(STATSURL).then(function(statsData) {
             console.log(statsData.teams[$randomIndex].teamStats[0].splits[0].stat);
 
-            // CACHE STATS VARIABLE SHORT CUT
+            // CACHE STATS DATA SHORT CUT
             const $statsDataShort = statsData.teams[$randomIndex].teamStats[0].splits[0].stat
             
             // CACHE STATS VARIABLES

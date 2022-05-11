@@ -1,16 +1,23 @@
 body {
-    background-color: grey;
-    /* min-width: 700px; */
+    background-image: url(https://static7.depositphotos.com/1073943/681/i/950/depositphotos_6812588-stock-photo-ice-background.jpg?forcejpeg=true);
+
+    /* background-image: url(https://media.istockphoto.com/photos/ice-hockey-background-picture-id135961895?s=612x612); */
+    /* background-repeat: no-repeat; */
+    /* background-size: 100%; */
+
+    /* background-image: url('https://c0.wallpaperflare.com/preview/742/406/570/ice-rink-background-sports.jpg'); */
+
+    /* background-size: cover; */
 }
 
 header {
     color: black;
     text-align: center;
     border: 5px rgb(100, 100, 100) solid;
-    width: 75%;
+    width: 60%;
     padding: 15px;
     margin: 30px auto;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 button {
@@ -32,7 +39,7 @@ button {
     width: 250px;
     padding: 30px;
     margin: 0 30px 30px 15px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 #stats {
@@ -42,7 +49,7 @@ button {
     width: 250px;
     padding: 30px;
     margin: 0 30px 30px 15px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 #names {
@@ -52,7 +59,7 @@ button {
     width: 250px;
     padding: 30px;
     margin: 0 30px 30px 15px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 li {
