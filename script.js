@@ -28,7 +28,7 @@ $.ajax(TEAMURL).then(function(teamData) {
     const $teamRoster = teamData.teams[randomIndex].roster.roster;
     // APPEND INFO HEADER
     $('#info').append(`<h3>Team Information</h3>`);
-    // APPEND LIST ITEMS
+    // APPEND TEAM INFO
     $('#info').append(`<li>${$teamName}</li>`);
     $('#info').append(`<li>Abbreviation: ${$teamAbv}</li>`);
     $('#info').append(`<li>Conference: ${$teamConf}</li>`);
@@ -36,18 +36,15 @@ $.ajax(TEAMURL).then(function(teamData) {
     $('#info').append(`<li>Venue: ${$teamVenue}</li>`);
     $('#info').append(`<li>Established: ${$teamEstb}</li>`);
     $('#info').append(`<li><a href="${$teamSite}">Official Team Site</a></li>`);
-    // APPEND ROSTER HEADING
+    // APPEND ROSTER HEADER
     $('#info').append(`<h3>Active Roster</h3>`);
     // APPEND ROSTER LIST
     $teamRoster.forEach((rosterData) => {
-        console.log(rosterData.person.fullName);
-        const $names = $('#names');
-        $names.text(rosterData.person.fullName);
-        $names.append($names);
+        console.log(rosterData.person.fullName)
+        const $playerNames = $('<li>');
+        $playerNames.text(rosterData.person.fullName);
+        $('#names').append($playerNames);
     })
-
-
-
     console.log($teamRoster);
 })};
 // EVENT LISTINERS
