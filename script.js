@@ -17,7 +17,7 @@ const getRandomTeam = () => {
     $statsContent.empty();
     $namesContent.empty();
 
-    // ACCESS API
+    // ACCESS TEAM API
     $.ajax(TEAMURL).then(function(teamData) {
         console.log('League info is ready!');
 
@@ -28,15 +28,18 @@ const getRandomTeam = () => {
         // LOG TEAM DATA
         console.log(teamData);
 
+        // CACHE TEAM VARIABLE SHORT CUT
+        const $teamDataShort = teamData.teams[$randomIndex]
+
         // CACHE TEAM VARIABLES
-        const $teamName = teamData.teams[$randomIndex].name;
-        const $teamAbv = teamData.teams[$randomIndex].abbreviation;
-        const $teamConf = teamData.teams[$randomIndex].conference.name;
-        const $teamDiv = teamData.teams[$randomIndex].division.name;
-        const $teamVenue = teamData.teams[$randomIndex].venue.name;
-        const $teamEstb = teamData.teams[$randomIndex].firstYearOfPlay;
-        const $teamSite = teamData.teams[$randomIndex].officialSiteUrl;
-        const $teamRoster = teamData.teams[$randomIndex].roster.roster;
+        const $teamName = $teamDataShort.name;
+        const $teamAbv = $teamDataShort.abbreviation;
+        const $teamConf = $teamDataShort.conference.name;
+        const $teamDiv = $teamDataShort.division.name;
+        const $teamVenue = $teamDataShort.venue.name;
+        const $teamEstb = $teamDataShort.firstYearOfPlay;
+        const $teamSite = $teamDataShort.officialSiteUrl;
+        // const $teamRoster = teamData.teams[$randomIndex].roster.roster;
 
         // APPEND INFO HEADER
         $('#info').append(`<h3>Team Information</h3>`);
@@ -54,20 +57,23 @@ const getRandomTeam = () => {
         $.ajax(STATSURL).then(function(statsData) {
             console.log(statsData.teams[$randomIndex].teamStats[0].splits[0].stat);
 
+            // CACHE STATS VARIABLE SHORT CUT
+            const $statsDataShort = statsData.teams[$randomIndex].teamStats[0].splits[0].stat
+            
             // CACHE STATS VARIABLES
-            const $points = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.pts;
-            const $wins = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.wins;
-            const $losses = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.losses;
-            const $overTime = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.ot;
-            const $goalsPerGame = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.goalsPerGame;
-            const $goalsAgainst = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.goalsAgainstPerGame;
-            const $shotsPerGame = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.shotsPerGame;
-            const $shotsAllowed = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.shotsAllowed;
-            const $powerPlay = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.powerPlayPercentage;
-            const $penaltyKill = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.penaltyKillPercentage;
-            const $shootPercentage = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.shootingPctg;
-            const $savePercentage = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.savePctg;
-            const $faceOff = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.faceOffWinPercentage;
+            const $points = $statsDataShort.pts;
+            const $wins = $statsDataShort.wins;
+            const $losses = $statsDataShort.losses;
+            const $overTime = $statsDataShort.ot;
+            const $goalsPerGame = $statsDataShort.goalsPerGame;
+            const $goalsAgainst = $statsDataShort.goalsAgainstPerGame;
+            const $shotsPerGame = $statsDataShort.shotsPerGame;
+            const $shotsAllowed = $statsDataShort.shotsAllowed;
+            const $powerPlay = $statsDataShort.powerPlayPercentage;
+            const $penaltyKill = $statsDataShort.penaltyKillPercentage;
+            const $shootPercentage = $statsDataShort.shootingPctg;
+            const $savePercentage = $statsDataShort.savePctg;
+            const $faceOff = $statsDataShort.faceOffWinPercentage;
 
             // APPEND STATS HEADER
             $('#stats').append(`<h3>Team Statistics</h3>`);
@@ -87,6 +93,9 @@ const getRandomTeam = () => {
             $('#stats').append(`<li>Save Percentage: ${$savePercentage}%</li>`);
             $('#stats').append(`<li>Face Off Percentage: ${$faceOff}%</li>`);
         });
+
+        // CACHE ROSTER DATA SHORT CUT
+        const $teamRoster = teamData.teams[$randomIndex].roster.roster;
 
         // APPEND ROSTER HEADER
         $('#names').append(`<h3>Active Roster</h3>`);
