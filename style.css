@@ -1,5 +1,5 @@
 body {
-    background-color: black;
+    background-color: grey;
     min-width: 700px;
 }
 
@@ -33,7 +33,7 @@ button {
     background-color: black;
 }
 
-#info {
+/* #info {
     color: black;
     border: 5px rgb(100, 100, 100) solid;
     border-radius: 3%;
@@ -43,15 +43,6 @@ button {
     margin: 50px;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.9);
-}
-
-/* #logo {
-    border: 5px #c8102e solid;
-    height: 300px;
-    width: 30%;
-    padding: 30px;
-    margin: 50px;
-    position: absolute;
 } */
 
 li {
