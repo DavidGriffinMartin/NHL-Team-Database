@@ -1,31 +1,40 @@
 hello = 'Good morning, Dave.'
 console.log(hello);
 
-// NHL API (TEAMS)
-const TEAMURL = 'https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster';
+// NHL API LINKS
+const TEAMURL = 'https://statsapi.web.nhl.com/api/v1/teams?expand=team.roster&season=20212022';
+const STATSURL = 'https://statsapi.web.nhl.com/api/v1/teams?expand=team.stats';
+
+// CACHE ELEMENTS
 const $getTeamBtn = $('#getTeamBtn');
 const $infoContent = $('#info');
+const $statsContent = $('#stats');
 const $namesContent = $('#names');
+
 // GET TEAM FUNCTION
 const getTeam = () => {
     $infoContent.empty();
+    $statsContent.empty();
     $namesContent.empty();
+    // ACCESS API
 $.ajax(TEAMURL).then(function(teamData) {
     console.log('League info is ready!');
     // DECLARE RANDOM INDEX
-    const randomIndex = Math.floor(Math.random() * 31);
-	console.log('selected Team: ' + randomIndex);
-    // CHECK API CONNECTION
+    const $randomIndex = Math.floor(Math.random() * 31);
+    console.log('Selected Team: ' + $randomIndex);
+    // LOG TEAM DATA
     console.log(teamData);
-    // CACHE VARIABLES
-    const $teamName = teamData.teams[randomIndex].name;
-    const $teamAbv = teamData.teams[randomIndex].abbreviation;
-    const $teamConf = teamData.teams[randomIndex].conference.name;
-    const $teamDiv = teamData.teams[randomIndex].division.name;
-    const $teamVenue = teamData.teams[randomIndex].venue.name;
-    const $teamEstb = teamData.teams[randomIndex].firstYearOfPlay;
-    const $teamSite = teamData.teams[randomIndex].officialSiteUrl;
-    const $teamRoster = teamData.teams[randomIndex].roster.roster;
+
+    // CACHE TEAM VARIABLES
+    const $teamName = teamData.teams[$randomIndex].name;
+    const $teamAbv = teamData.teams[$randomIndex].abbreviation;
+    const $teamConf = teamData.teams[$randomIndex].conference.name;
+    const $teamDiv = teamData.teams[$randomIndex].division.name;
+    const $teamVenue = teamData.teams[$randomIndex].venue.name;
+    const $teamEstb = teamData.teams[$randomIndex].firstYearOfPlay;
+    const $teamSite = teamData.teams[$randomIndex].officialSiteUrl;
+    const $teamRoster = teamData.teams[$randomIndex].roster.roster;
+
     // APPEND INFO HEADER
     $('#info').append(`<h3>Team Information</h3>`);
     // APPEND TEAM INFO
@@ -36,15 +45,55 @@ $.ajax(TEAMURL).then(function(teamData) {
     $('#info').append(`<li>Venue: ${$teamVenue}</li>`);
     $('#info').append(`<li>Established: ${$teamEstb}</li>`);
     $('#info').append(`<li><a href="${$teamSite}">Official Team Site</a></li>`);
+
+    // ACCESS STATS API
+    $.ajax(STATSURL).then(function(statsData) {
+        console.log(statsData.teams[$randomIndex].teamStats[0].splits[0].stat);
+
+        // CACHE STATS VARIABLES
+        const $points = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.pts;
+        const $wins = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.wins;
+        const $losses = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.losses;
+        const $overTime = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.ot;
+        const $goalsPerGame = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.goalsPerGame;
+        const $goalsAgainst = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.goalsAgainstPerGame;
+        const $shotsPerGame = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.shotsPerGame;
+        const $shotsAllowed = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.shotsAllowed;
+        const $powerPlay = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.powerPlayPercentage;
+        const $penaltyKill = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.penaltyKillPercentage;
+        const $shootPercentage = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.shootingPctg;
+        const $savePercentage = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.savePctg;
+        const $faceOff = statsData.teams[$randomIndex].teamStats[0].splits[0].stat.faceOffWinPercentage;
+
+        // APPEND STATS HEADER
+        $('#stats').append(`<h3>Team Statistics</h3>`);
+
+        // APPEND TEAM STATISTICS
+        $('#stats').append(`<li>Points: ${$points}</li>`);
+        $('#stats').append(`<li>Wins: ${$wins}</li>`);
+        $('#stats').append(`<li>Losses: ${$losses}</li>`);
+        $('#stats').append(`<li>Overtime: ${$overTime}</li>`);
+        $('#stats').append(`<li>Goals Per Game: ${$goalsPerGame}</li>`);
+        $('#stats').append(`<li>Goals Against Per Game: ${$goalsAgainst}</li>`);
+        $('#stats').append(`<li>Shots Per Game: ${$shotsPerGame}</li>`);
+        $('#stats').append(`<li>Shots Allowed Per Game: ${$shotsAllowed}</li>`);
+        $('#stats').append(`<li>Power Play Percentage: ${$powerPlay}%</li>`);
+        $('#stats').append(`<li>Penalty Kill Percentage: ${$penaltyKill}%</li>`);
+        $('#stats').append(`<li>Shooting Percentage: ${$shootPercentage}%</li>`);
+        $('#stats').append(`<li>Save Percentage: ${$savePercentage}%</li>`);
+        $('#stats').append(`<li>Face Off Percentage: ${$faceOff}%</li>`);
+    });
+
     // APPEND ROSTER HEADER
-    $('#info').append(`<h3>Active Roster</h3>`);
-    // APPEND ROSTER LIST
+    $('#names').append(`<h3>Active Roster</h3>`);
+    // GET ROSTER FUNCTION
     $teamRoster.forEach((rosterData) => {
-        console.log(rosterData.person.fullName)
         const $playerNames = $('<li>');
         $playerNames.text(rosterData.person.fullName);
+        // APPEND ROSTER LIST
         $('#names').append($playerNames);
     })
+    // LOG ROSTER DATA
     console.log($teamRoster);
 })};
 // EVENT LISTINERS
