@@ -84,12 +84,12 @@ const getRandomTeam = () => {
             $('#stats').append(`<li>Wins: ${$wins}</li>`);
             $('#stats').append(`<li>Losses: ${$losses}</li>`);
             $('#stats').append(`<li>Overtime: ${$overTime}</li>`);
-            $('#stats').append(`<li>Goals Per Game: ${$goalsPerGame}</li>`);
-            $('#stats').append(`<li>Goals Against Per Game: ${$goalsAgainst}</li>`);
-            $('#stats').append(`<li>Shots Per Game: ${$shotsPerGame}</li>`);
-            $('#stats').append(`<li>Shots Allowed Per Game: ${$shotsAllowed}</li>`);
+            $('#stats').append(`<li>Goals Per Game: ${$goalsPerGame.toFixed(2)}</li>`);
+            $('#stats').append(`<li>Goals Against Per Game: ${$goalsAgainst.toFixed(2)}</li>`);
             $('#stats').append(`<li>Power Play Percentage: ${$powerPlay}%</li>`);
             $('#stats').append(`<li>Penalty Kill Percentage: ${$penaltyKill}%</li>`);
+            $('#stats').append(`<li>Shots Per Game: ${$shotsPerGame.toFixed(1)}</li>`);
+            $('#stats').append(`<li>Shots Allowed Per Game: ${$shotsAllowed.toFixed(1)}</li>`);
             $('#stats').append(`<li>Shooting Percentage: ${$shootPercentage}%</li>`);
             $('#stats').append(`<li>Save Percentage: ${$savePercentage}%</li>`);
             $('#stats').append(`<li>Face Off Percentage: ${$faceOff}%</li>`);
@@ -104,7 +104,7 @@ const getRandomTeam = () => {
         // GET ROSTER FUNCTION
         $teamRoster.forEach((rosterData) => {
             const $playerNames = $('<li>');
-            $playerNames.text(rosterData.person.fullName);
+            $playerNames.text(rosterData.position.abbreviation + " - " + rosterData.person.fullName + " #" + rosterData.jerseyNumber);
 
             // APPEND ROSTER LIST
             $('#names').append($playerNames);
