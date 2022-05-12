@@ -8,13 +8,13 @@
 
 <li>HTML, CSS, JavaScript, jQuery, and Ajax.</li>
 
-<h3>Getting started:</h3>
-
-Getting started is simple ! Just <a href="">Go Here</a> and click the button !
-
 <h3>User Story:</h3>
 
 <li>As a user, you will be able to click a button and retrieve a random NHL teams information / statistics / and active NHL roster for the current 2021-2022 regular season.</li>
+
+<h3>Getting started:</h3>
+
+Getting started is simple ! Just <a href="">Go Here</a> and click the button !
 
 <h3>User Interface:</h3>
 
