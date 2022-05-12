@@ -10,6 +10,7 @@ const $getTeamBtn = $('#getTeamBtn');
 const $infoContent = $('#info');
 const $statsContent = $('#stats');
 const $namesContent = $('#names');
+const $logoContent = $('.logo');
 
 // GET TEAM FUNCTION
 const getRandomTeam = () => {
@@ -18,6 +19,7 @@ const getRandomTeam = () => {
     $infoContent.empty();
     $statsContent.empty();
     $namesContent.empty();
+    $logoContent.empty();
 
     // ACCESS TEAM API
     $.ajax(TEAMURL).then(function(teamData) {
@@ -26,6 +28,29 @@ const getRandomTeam = () => {
         // DECLARE RANDOM INDEX
         const $randomIndex = Math.floor(Math.random() * 32);
         console.log('Selected Team: ' + $randomIndex);
+
+        if ($randomIndex === 0)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/18/full/32tfs723a3bes0p0hb4hgcy1u.png" alt=""/>`);
+        if ($randomIndex === 1)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/19/full/3911_new_york_islanders-primary-2018.png" alt=""/>`);
+        if ($randomIndex === 2)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/20/full/new_york_rangers-primary_20006777.png" alt=""/>`);
+        if ($randomIndex === 3)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/22/full/161.png" alt=""/>`);
+        if ($randomIndex === 4)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/24/full/6362_pittsburgh_penguins-primary-2017.png" alt=""/>`);
+        if ($randomIndex === 5)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/3/full/venf9fmhgnsawnxxvehf.png" alt=""/>`);
+        if ($randomIndex === 6)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/4/full/5493_buffalo_sabres-primary-2021.png" alt=""/>`);
+
+
+        if ($randomIndex === 13)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/30/full/llrs2zxi127vkqgcsvfb.png" alt=""/>`);
+
+            
+        if ($randomIndex === 30)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/6114/full/2684_vegas_golden_knights-primary-2018.png" alt=""/>`);
 
         // LOG TEAM DATA
         console.log(teamData);
@@ -83,7 +108,7 @@ const getRandomTeam = () => {
             $('#stats').append(`<li>Points: ${$points}</li>`);
             $('#stats').append(`<li>Wins: ${$wins}</li>`);
             $('#stats').append(`<li>Losses: ${$losses}</li>`);
-            $('#stats').append(`<li>Overtime: ${$overTime}</li>`);
+            $('#stats').append(`<li>Overtime Losses: ${$overTime}</li>`);
             $('#stats').append(`<li>Goals Per Game: ${$goalsPerGame.toFixed(2)}</li>`);
             $('#stats').append(`<li>Goals Against Per Game: ${$goalsAgainst.toFixed(2)}</li>`);
             $('#stats').append(`<li>Power Play Percentage: ${$powerPlay}%</li>`);
