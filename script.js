@@ -43,6 +43,12 @@ const getRandomTeam = () => {
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/3/full/venf9fmhgnsawnxxvehf.png" alt=""/>`);
         if ($randomIndex === 6)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/4/full/5493_buffalo_sabres-primary-2021.png" alt=""/>`);
+        if ($randomIndex === 7)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/16/full/montreal_canadiens_logo_primary_20001687.png" alt=""/>`);
+        if ($randomIndex === 8)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/21/full/1129_ottawa_senators-primary-2021.png" alt=""/>`);
+        if ($randomIndex === 9)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/28/full/8761_toronto_maple_leafs-primary-2017.png" alt=""/>`);
 
 
         if ($randomIndex === 13)
