@@ -8,9 +8,14 @@ For our first project I chose to create a website that will list out NHL team in
 
 <li>As a user, you will be able to click a button and retrieve a random NHL teams information / statistics / and active NHL roster for the current 2021-2022 regular season.</li>
 
-<h3>Wireframe</h3>
+<h3>User Interface</h3>
 
 ![image](https://user-images.githubusercontent.com/105015655/168113617-519f532a-4792-4e4c-bf05-c9743472febc.jpeg)
+
+<h3>Information Display</h3>
+
+![image](https://user-images.githubusercontent.com/105015655/168114161-f4bb18cd-32e9-4886-bdee-9463ef7a6738.jpeg)
+
 
 
   
