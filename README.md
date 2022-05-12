@@ -14,7 +14,7 @@
 
 <h3>Getting started:</h3>
 
-<li>Getting started is simple ! Just <a href="">Go Here</a> and click the button !</li>
+<li>Getting started is simple ! Just <a href="https://davidgriffinmartin.github.io/unit1Project/">Go Here</a> and click the button !</li>
 
 <h3>User Interface:</h3>
 
