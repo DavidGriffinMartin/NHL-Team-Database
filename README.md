@@ -14,7 +14,7 @@
 
 <h3>Getting started:</h3>
 
-Getting started is simple ! Just <a href="">Go Here</a> and click the button !
+<li>Getting started is simple ! Just <a href="">Go Here</a> and click the button !</li>
 
 <h3>User Interface:</h3>
 
