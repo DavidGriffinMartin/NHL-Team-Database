@@ -48,7 +48,7 @@ const getRandomTeam = () => {
         if ($randomIndex === 13)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/30/full/llrs2zxi127vkqgcsvfb.png" alt=""/>`);
 
-            
+
         if ($randomIndex === 30)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/6114/full/2684_vegas_golden_knights-primary-2018.png" alt=""/>`);
 
