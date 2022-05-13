@@ -29,6 +29,10 @@ const getRandomTeam = () => {
         const $randomIndex = Math.floor(Math.random() * 32);
         console.log('Selected Team: ' + $randomIndex);
 
+        // LOG TEAM DATA
+        console.log(teamData);
+
+        // APPEND TEAM LOGOS
         if ($randomIndex === 0)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/18/full/32tfs723a3bes0p0hb4hgcy1u.png" alt=""/>`);
         if ($randomIndex === 1)
@@ -49,17 +53,50 @@ const getRandomTeam = () => {
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/21/full/1129_ottawa_senators-primary-2021.png" alt=""/>`);
         if ($randomIndex === 9)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/28/full/8761_toronto_maple_leafs-primary-2017.png" alt=""/>`);
-
-
+        if ($randomIndex === 10)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/6/full/fotih31tn5r345nufo5xxayh3.png" alt=""/>`);
+        if ($randomIndex === 11)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/13/full/8078_florida_panthers-primary-2017.png" alt=""/>`);
+        if ($randomIndex === 12)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/27/full/tampa_bay_lightning_logo_primary_20124022.png" alt=""/>`);
         if ($randomIndex === 13)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/30/full/llrs2zxi127vkqgcsvfb.png" alt=""/>`);
-
-
+        if ($randomIndex === 14)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/7/full/56.png" alt=""/>`);
+        if ($randomIndex === 15)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/11/full/yo3wysbjtagzmwj37tb11u0fh.png" alt=""/>`);
+        if ($randomIndex === 16)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/17/full/lvchw3qfsun2e7oc02kh2zxb6.png" alt=""/>`);
+        if ($randomIndex === 17)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/25/full/187.png" alt=""/>`);
+        if ($randomIndex === 18)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/5/full/4820_calgary_flames-primary-2021.png" alt=""/>`);
+        if ($randomIndex === 19)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/8/full/64.png" alt=""/>`);
+        if ($randomIndex === 20)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/12/full/2728_edmonton_oilers-primary-2018.png" alt=""/>`);
+        if ($randomIndex === 21)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/29/full/2084_vancouver_canucks-primary-2020.png" alt=""/>`);
+        if ($randomIndex === 22)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/1736/full/1651_anaheim_ducks-primary-20141.png" alt=""/>`);
+        if ($randomIndex === 23)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/10/full/dallas_stars_logo_primary_2022_sportslogosnet-4332.png" alt=""/>`);
+        if ($randomIndex === 24)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/14/full/2220_los_angeles_kings-primary-2020.png" alt=""/>`);
+        if ($randomIndex === 25)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/26/full/san_jose_sharks-primary_20099429.png" alt=""/>`);
+        if ($randomIndex === 26)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/9/full/jhepegs329pc7ugyypebl28wg.png" alt=""/>`);
+        if ($randomIndex === 27)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/15/full/8810_minnesota_wild-primary-2014.png" alt=""/>`);
+        if ($randomIndex === 28)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/3050/full/z9qyy9xqoxfjn0njxgzoy2rwk.png" alt=""/>`);
+        if ($randomIndex === 29)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/5263/full/arizona_coyotes_logo_primary_2022_sportslogosnet-8273.png" alt=""/>`);
         if ($randomIndex === 30)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/6114/full/2684_vegas_golden_knights-primary-2018.png" alt=""/>`);
-
-        // LOG TEAM DATA
-        console.log(teamData);
+        if ($randomIndex === 31)
+            $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/6740/full/seattle_kraken_logo_primary_20226314.png" alt=""/>`);
 
         // CACHE TEAM DATA SHORT CUT
         const $teamDataShort = teamData.teams[$randomIndex]
