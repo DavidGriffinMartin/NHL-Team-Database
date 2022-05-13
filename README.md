@@ -14,7 +14,7 @@
 
 <h3>User Interface:</h3>
 
-![image](https://user-images.githubusercontent.com/105015655/168113617-519f532a-4792-4e4c-bf05-c9743472febc.jpeg)
+![image](https://user-images.githubusercontent.com/105015655/168289605-bae29765-9f30-46c7-b9ed-06e652441496.jpeg)
 
 <h3>Information Display:</h3>
 
