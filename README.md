@@ -18,7 +18,7 @@
 
 <h3>Information Display:</h3>
 
-![image](https://user-images.githubusercontent.com/105015655/168114161-f4bb18cd-32e9-4886-bdee-9463ef7a6738.jpeg)
+![image](https://user-images.githubusercontent.com/105015655/168289935-865c387d-7af6-4de8-86b1-d34cc173b210.jpeg)
 
 <h3>Technologies Used:</h3>
 
