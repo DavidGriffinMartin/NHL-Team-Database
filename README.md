@@ -20,9 +20,9 @@
 
 ![image](https://user-images.githubusercontent.com/105015655/168289935-865c387d-7af6-4de8-86b1-d34cc173b210.jpeg)
 
-<h3>NHL API Link:
+<h3>NHL API Link:</h3>
  
- <li>https://github.com/dword4/nhlapi</li>
+<li>https://github.com/dword4/nhlapi</li>
 
 <h3>Technologies Used:</h3>
 
