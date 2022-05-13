@@ -28,9 +28,13 @@
 
 <li>HTML, CSS, JavaScript, jQuery, and Ajax.</li>
 
-<h3>Future Enhancements</h3>
+<h3>Future Enhancements:</h3>
 
 <li>Removal of the 'Get Random Team' button and replaced with a drop down menu consistiong of all 32 NHL teams in alphabetical order.</li>
 <li>Addition of further team stats and team schedule.</li>
 <li><strike>Matching team logo displayed above current team information upon selection.</strike></li>
 <li>Dynamically changing background image of each teams venue to match current team logo and information upon selection.
+ 
+ <h3>Spoiler Alert:</h3>
+ 
+ <li>Being the massive Capitals fan I am, theres an easter egg hiding in there ! Tell me if you've found it !</li>
