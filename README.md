@@ -37,4 +37,4 @@
  
  <h3>Spoiler Alert:</h3>
  
- <li>Being the massive Capitals fan I am, theres an easter egg hiding in there ! Tell me if you've found it !</li>
+ <li>Being the massive Capitals fan that I am, theres an easter egg hiding in there ! Tell me if you've found it !</li>
