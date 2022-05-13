@@ -32,6 +32,18 @@ const getRandomTeam = () => {
         // LOG TEAM DATA
         console.log(teamData);
 
+        // CACHE TEAM DATA SHORT CUT
+        const $teamDataShort = teamData.teams[$randomIndex]
+
+        // CACHE TEAM VARIABLES
+        const $teamName = $teamDataShort.name;
+        const $teamAbv = $teamDataShort.abbreviation;
+        const $teamConf = $teamDataShort.conference.name;
+        const $teamDiv = $teamDataShort.division.name;
+        const $teamVenue = $teamDataShort.venue.name;
+        const $teamEstb = $teamDataShort.firstYearOfPlay;
+        const $teamSite = $teamDataShort.officialSiteUrl;
+
         // APPEND TEAM LOGOS
         if ($randomIndex === 0)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/18/full/32tfs723a3bes0p0hb4hgcy1u.png" alt=""/>`);
@@ -97,18 +109,6 @@ const getRandomTeam = () => {
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/6114/full/2684_vegas_golden_knights-primary-2018.png" alt=""/>`);
         if ($randomIndex === 31)
             $('.logo').append(`<img id="image" src="https://content.sportslogos.net/logos/1/6740/full/seattle_kraken_logo_primary_20226314.png" alt=""/>`);
-
-        // CACHE TEAM DATA SHORT CUT
-        const $teamDataShort = teamData.teams[$randomIndex]
-
-        // CACHE TEAM VARIABLES
-        const $teamName = $teamDataShort.name;
-        const $teamAbv = $teamDataShort.abbreviation;
-        const $teamConf = $teamDataShort.conference.name;
-        const $teamDiv = $teamDataShort.division.name;
-        const $teamVenue = $teamDataShort.venue.name;
-        const $teamEstb = $teamDataShort.firstYearOfPlay;
-        const $teamSite = $teamDataShort.officialSiteUrl;
 
         // APPEND INFO HEADER
         $('#info').append(`<h3>Team Information</h3>`);
